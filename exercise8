@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Iframe Exercise</title>
+
+<style>
+iframe{
+width:500px;
+height:500px;
+border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Tong-En Hsiao</h1>
+<p>113403526</p>
+
+<iframe src="https://www.w3schools.com"></iframe>
+
+</body>
+</html>
