@@ -34,13 +34,35 @@ body {
 }
 
 .box3 {
+    position: relative;
     background-color: mediumseagreen;
-    border: 8px dotted gray;
-    padding: 10px;
+    padding: 20px 10px;
     font-size: 24px;
     font-weight: bold;
+    margin-top: 10px;
 }
-    
+
+.box3::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-image: radial-gradient(circle, gray 40%, transparent 41%);
+    background-size: 30px 20px;
+}
+
+.box3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-image: radial-gradient(circle, gray 40%, transparent 41%);
+    background-size: 30px 20px;
+}
 </style>
 </head>
 
