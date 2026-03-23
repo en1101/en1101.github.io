@@ -3,62 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Heading Style</title>
-
 <style>
-body {
-    background-color: #f2f2f2;
-    font-family: "Times New Roman", serif;
+body{
+    background:#f2f2f2;
+    font-family:"Times New Roman", serif;
 }
 
-.container {
-    width: 520px;
-    background-color: #ddd;
-    padding: 20px;
-    margin: 50px auto;
-    box-shadow: 5px 5px 10px gray;
+.container{
+    width:900px;
+    background:#e9e9e9;
+    margin:30px auto;
+    padding:18px 12px 20px 12px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.35);
 }
 
-.h1 {
-    font-size: 30px;
-    font-weight: bold;
-    border-top: 4px solid black;
-    display: inline-block;
-    padding-top: 5px;
-    text-shadow: 2px 2px 0 pink;
+.h1{
+    font-size:42px;
+    font-weight:bold;
+    line-height:1;
+    display:inline-block;
+    border-top:5px solid #000;
+    padding-top:2px;
+    color:#111;
+    text-shadow:3px 3px 0 #f3b6c3;
+    position:relative;
 }
 
-.h2-box {
-    border: 3px solid #c9b800;
-    padding: 5px;
-    margin-top: 15px;
+.h1::before{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#f3b6c3;
+    transform:translate(3px,3px);
+    z-index:-1;
 }
 
-.h2 {
-    font-size: 22px;
-    font-style: italic;
+.h2-box{
+    margin-top:18px;
+    border:3px solid #d6cf1f;
+    padding:2px;
 }
 
-.h3 {
-    font-size: 18px;
-    text-align: right;
-    text-decoration: underline;
-    margin-top: 15px;
+.h2{
+    border:1px solid #000;
+    font-size:32px;
+    font-style:italic;
+    font-weight:bold;
+    line-height:1.1;
+    padding:6px 10px;
+    color:#111;
+}
+
+.h3{
+    margin-top:32px;
+    text-align:right;
+    font-size:28px;
+    font-weight:bold;
+    text-decoration:underline;
+    color:#111;
+    padding-right:10px;
 }
 </style>
-
 </head>
-
 <body>
-
-<div class="container">
-    <div class="h1">This is heading 1</div>
-
-    <div class="h2-box">
-        <div class="h2">This is heading 2</div>
+    <div class="container">
+        <div class="h1">This is heading 1</div>
+        <div class="h2-box">
+            <div class="h2">This is heading 2</div>
+        </div>
+        <div class="h3">This is heading 3</div>
     </div>
-
-    <div class="h3">This is heading 3</div>
-</div>
-
 </body>
 </html>
