@@ -37,14 +37,27 @@ body{
 }
 
 .box3{
-    background:
-        radial-gradient(circle, gray 0 4px, transparent 4.5px) top/30px 16px repeat-x,
-        radial-gradient(circle, gray 0 4px, transparent 4.5px) bottom/30px 16px repeat-x,
-        mediumseagreen;
-
-    padding:18px 14px;
+    position:relative;
+    background:mediumseagreen;
+    padding:18px 16px;
     font-size:24px;
     font-weight:bold;
+    margin-top:4px;
+}
+
+.box3::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle, gray 0 4px, transparent 4.5px),
+        radial-gradient(circle, gray 0 4px, transparent 4.5px),
+        radial-gradient(circle, gray 0 4px, transparent 4.5px),
+        radial-gradient(circle, gray 0 4px, transparent 4.5px);
+    background-repeat:repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size:31px 12px, 31px 12px, 12px 24px, 12px 24px;
+    background-position:top center, bottom center, left center, right center;
 }
 </style>
 </head>
