@@ -20,41 +20,26 @@ body{
 .h1{
     font-size:42px;
     font-weight:bold;
-    line-height:1;
     display:inline-block;
-    border-top:5px solid #000;
-    padding-top:2px;
+    padding-top:6px;
     color:#111;
     text-shadow:3px 3px 0 #f3b6c3;
-    position:relative;
-}
-
-.h1::before{
-    content:"";
-    position:absolute;
-    top:-5px;
-    left:0;
-    width:100%;
-    height:5px;
-    background:#f3b6c3;
-    transform:translate(3px,3px);
-    z-index:-1;
+    border-top:5px solid black;
+    box-shadow:0 -3px 0 #f3b6c3;
 }
 
 .h2-box{
     margin-top:18px;
     border:3px solid #d6cf1f;
-    padding:2px;
+    padding:0;
 }
 
 .h2{
-    border:1px solid #000;
+    border:2px solid #000; /* 稍微粗一點更像圖 */
     font-size:32px;
     font-style:italic;
     font-weight:bold;
-    line-height:1.1;
     padding:6px 10px;
-    color:#111;
 }
 
 .h3{
@@ -63,18 +48,20 @@ body{
     font-size:28px;
     font-weight:bold;
     text-decoration:underline;
-    color:#111;
     padding-right:10px;
 }
 </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="h1">This is heading 1</div>
-        <div class="h2-box">
-            <div class="h2">This is heading 2</div>
-        </div>
-        <div class="h3">This is heading 3</div>
+<div class="container">
+    <div class="h1">This is heading 1</div>
+
+    <div class="h2-box">
+        <div class="h2">This is heading 2</div>
     </div>
+
+    <div class="h3">This is heading 3</div>
+</div>
 </body>
 </html>
