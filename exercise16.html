@@ -1,120 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>exercise16</title>
+<meta charset="UTF-8">
+<title>Hello World Style</title>
 
-    <style>
-        body{
-            margin:0;
-            background:#f2f2f2;
-            font-family:"Times New Roman", serif;
-        }
+<style>
+body {
+    background-color: #eee;
+    font-family: Arial, sans-serif;
+}
 
-        .container{
-            width:820px;
-            margin:60px auto;
-            background:white;
-            padding:28px 34px;
-            box-shadow:0 4px 14px rgba(0,0,0,0.25);
-        }
+.box1 {
+    background-color: #b7d3d9;
+    border: 5px double red;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+}
 
-        .box{
-            font-size:72px;
-            font-weight:bold;
-            color:black;
-            box-sizing:border-box;
-            margin-bottom:34px;
-        }
+.box2 {
+    background-color: yellow;
+    border: 3px solid #6a5acd;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+}
 
-        .box1{
-            background:#eaf7f7;
-            border:12px double #de6d5e;
-            padding:18px 20px;
-        }
+.box3 {
+    position: relative;
+    background-color: #2e8b57;
+    color: #003300;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
 
-        .box2{
-            background:#ecec2f;
-            border:5px solid #8aa0c8;
-            border-radius:24px;
-            padding:18px 20px;
-        }
+.box3 span {
+    position: relative;
+    z-index: 2;
+}
 
-        .box3{
-            position:relative;
-            background:#5ea25d;
-            padding:20px 22px;
-            margin-bottom:0;
-            color:black;
-            overflow:visible;
-        }
+.box3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 288px;
+    height: 12px;
+    background: radial-gradient(circle, gray 0 3px, transparent 3.5px);
+    background-size: 12.5217px 12px;
+    background-repeat: repeat-x;
+    background-position: left center;
+}
 
-        .box3 span{
-            position:relative;
-            z-index:2;
-        }
+.box3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    width: 288px;
+    height: 12px;
+    background: radial-gradient(circle, gray 0 3px, transparent 3.5px);
+    background-size: 12.5217px 12px;
+    background-repeat: repeat-x;
+    background-position: left center;
+}
 
-        .box3::before{
-            content:"";
-            position:absolute;
-            top:0;
-            left:12px;
-            right:12px;
-            height:16px;
-            z-index:1;
-            background:
-                radial-gradient(circle, #6c716b 0 6px, transparent 7px)
-                0 0 / 32px 16px repeat-x;
-        }
+.dot-left {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 12px;
+    height: calc(100% - 12px);
+    background: radial-gradient(circle, gray 0 3px, transparent 3.5px);
+    background-size: 12px calc((100% - 12px) / 2);
+    background-repeat: repeat-y;
+    background-position: center top;
+}
 
-        .box3::after{
-            content:"";
-            position:absolute;
-            bottom:0;
-            left:12px;
-            right:12px;
-            height:16px;
-            z-index:1;
-            background:
-                radial-gradient(circle, #6c716b 0 6px, transparent 7px)
-                0 0 / 32px 16px repeat-x;
-        }
+.dot-right {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 12px;
+    height: calc(100% - 12px);
+    background: radial-gradient(circle, gray 0 3px, transparent 3.5px);
+    background-size: 12px calc((100% - 12px) / 2);
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+</style>
 
-        .dot-left{
-            position:absolute;
-            top:0;
-            bottom:0;
-            left:0;
-            width:16px;
-            z-index:1;
-            background:
-                radial-gradient(circle, #6c716b 0 6px, transparent 7px)
-                0 0 / 16px 32px repeat-y;
-        }
-
-        .dot-right{
-            position:absolute;
-            top:0;
-            bottom:0;
-            right:0;
-            width:16px;
-            z-index:1;
-            background:
-                radial-gradient(circle, #6c716b 0 6px, transparent 7px)
-                0 0 / 16px 32px repeat-y;
-        }
-    </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="box box1">Hello World</div>
-        <div class="box box2">Hello World</div>
-        <div class="box box3">
-            <div class="dot-left"></div>
-            <div class="dot-right"></div>
-            <span>Hello World</span>
-        </div>
-    </div>
+
+<div class="box1">Hello World</div>
+<div class="box2">Hello World</div>
+<div class="box3">
+    <div class="dot-left"></div>
+    <div class="dot-right"></div>
+    <span>Hello World</span>
+</div>
+
 </body>
 </html>
