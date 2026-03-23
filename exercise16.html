@@ -38,26 +38,16 @@ body{
 
 .box3{
     position:relative;
-    background:mediumseagreen;
+    background:
+        radial-gradient(circle, gray 0 4px, transparent 4.5px) top/18px 12px repeat-x,
+        radial-gradient(circle, gray 0 4px, transparent 4.5px) bottom/18px 12px repeat-x,
+        radial-gradient(circle, gray 0 4px, transparent 4.5px) left/12px 26px repeat-y,
+        radial-gradient(circle, gray 0 4px, transparent 4.5px) right/12px 26px repeat-y,
+        mediumseagreen;
+
     padding:18px 16px;
     font-size:24px;
     font-weight:bold;
-    margin-top:4px;
-}
-
-.box3::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    background:
-        radial-gradient(circle, gray 0 4px, transparent 4.5px),
-        radial-gradient(circle, gray 0 4px, transparent 4.5px),
-        radial-gradient(circle, gray 0 4px, transparent 4.5px),
-        radial-gradient(circle, gray 0 4px, transparent 4.5px);
-    background-repeat:repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size:31px 12px, 31px 12px, 12px 24px, 12px 24px;
-    background-position:top center, bottom center, left center, right center;
 }
 </style>
 </head>
