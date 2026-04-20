@@ -6,31 +6,45 @@
 
 <meta charset="UTF-8">
 
-<title>Exercise 20</title>
+<title>Exercise 19</title>
 
 <style>
 
 body{
 
-    margin:0;
-
-    background:#eee;
+    background:#ececec;
 
     font-family:Arial;
 
 }
 
-.container{
+.wrapper{
 
-    width:700px;
+    width:900px;
+
+    height:380px;
 
     margin:80px auto;
 
+    background:#e5e5e5;
+
+    position:relative;
+
+    padding:25px;
+
+}
+
+.box{
+
+    width:820px;
+
+    height:250px;
+
     background:white;
 
-    padding:30px;
+    margin:auto;
 
-    box-shadow:0 0 8px gray;
+    box-shadow:0 0 5px gray;
 
     position:relative;
 
@@ -40,21 +54,25 @@ table{
 
     border-collapse:collapse;
 
+    position:absolute;
+
+    left:15px;
+
+    top:15px;
+
 }
 
 th,td{
 
-    border:1px solid black;
-
     width:120px;
 
-    height:50px;
+    height:55px;
 
-    text-align:left;
+    border:1px solid black;
 
-    padding-left:15px;
+    padding-left:12px;
 
-    font-size:28px;
+    font-size:20px;
 
 }
 
@@ -66,9 +84,7 @@ th{
 
 }
 
-tr:nth-child(2),
-
-tr:nth-child(4){
+.yellow{
 
     background:yellow;
 
@@ -78,19 +94,53 @@ tr:nth-child(4){
 
     position:fixed;
 
-    top:220px;
+    top:210px;
 
-    right:280px;
+    right:320px;
 
-    width:180px;
+    width:130px;
 
-    height:180px;
+    height:140px;
 
-    border:5px solid green;
+    border:4px solid green;
 
-    padding:10px;
+    padding:8px;
 
-    font-size:24px;
+    font-size:18px;
+
+    background:white;
+
+}
+
+.text1{
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:-95px;
+
+    color:red;
+
+    font-size:26px;
+
+    font-style:italic;
+
+}
+
+.text2{
+
+    position:absolute;
+
+    right:10px;
+
+    bottom:-95px;
+
+    color:red;
+
+    font-size:26px;
+
+    font-style:italic;
 
 }
 
@@ -100,7 +150,9 @@ tr:nth-child(4){
 
 <body>
 
-<div class="container">
+<div class="wrapper">
+
+<div class="box">
 
 <table>
 
@@ -112,7 +164,7 @@ tr:nth-child(4){
 
 </tr>
 
-<tr>
+<tr class="yellow">
 
 <td>1</td>
 
@@ -128,7 +180,7 @@ tr:nth-child(4){
 
 </tr>
 
-<tr>
+<tr class="yellow">
 
 <td>3</td>
 
@@ -145,6 +197,24 @@ This div<br>
 element has<br>
 
 position: fixed;
+
+</div>
+
+<div class="text1">
+
+Table with different<br>
+
+background colors
+
+</div>
+
+<div class="text2">
+
+A div element fix at top<br>
+
+and right
+
+</div>
 
 </div>
 
