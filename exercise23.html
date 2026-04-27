@@ -18,7 +18,7 @@ body{
 
     background:#f5f5f5;
 
-    font-family:Roboto, Arial, sans-serif;
+    font-family:Arial, sans-serif;
 
 }
 
@@ -36,13 +36,23 @@ body{
 
 }
 
+.title{
+
+    font-size:14px;
+
+    color:#666666;
+
+    margin-bottom:15px;
+
+    font-weight:bold;
+
+}
+
 .container{
 
     display:flex;
 
     gap:20px;
-
-    align-items:flex-start;
 
 }
 
@@ -56,15 +66,15 @@ body{
 
     background:#90ee90;
 
+    padding:8px;
+
     margin-bottom:8px;
 
-    padding:8px;
+    border:1px solid #5fa85f;
 
     font-size:13px;
 
     cursor:pointer;
-
-    border:1px solid #5fa85f;
 
 }
 
@@ -120,17 +130,9 @@ button{
 
     background:white;
 
-    color:#212f2f;
-
     font-size:13px;
 
     cursor:pointer;
-
-}
-
-button:hover{
-
-    background:#eeeeee;
 
 }
 
@@ -140,9 +142,7 @@ button:hover{
 
     width:450px;
 
-    height:100px;
-
-    overflow-y:auto;
+    height:120px;
 
     margin-top:12px;
 
@@ -160,6 +160,8 @@ button:hover{
 
     line-height:1.7;
 
+    overflow-y:scroll;
+
 }
 
 </style>
@@ -170,61 +172,121 @@ button:hover{
 
 <div class="wrapper">
 
-    <div class="container">
+<div class="title">Preview</div>
 
-        <div class="list">
+<div class="container">
 
-            <div class="item" onclick="changeImage('https://picsum.photos/id/1015/450/240','River Landscape','450 x 240','Nature','JPG','A beautiful river landscape with mountains and clear water.')">
+<div class="list">
 
-                Image 1
+<div class="item"
 
-            </div>
+onclick="changeImage(
 
-            <div class="item" onclick="changeImage('https://picsum.photos/id/1016/450/240','Mountain View','450 x 240','Travel','JPG','A mountain view with natural scenery and bright sky.')">
+'https://picsum.photos/id/1015/450/240',
 
-                Image 2
+'River Landscape',
 
-            </div>
+'Nature',
 
-            <div class="item" onclick="changeImage('https://picsum.photos/id/1018/450/240','Forest Path','450 x 240','Outdoor','JPG','A peaceful forest path surrounded by green trees.')">
+'Beautiful river and mountain view.')">
 
-                Image 3
+Image 1
 
-            </div>
+</div>
 
-            <div class="item" onclick="changeImage('https://picsum.photos/id/1020/450/240','Bear Image','450 x 240','Animal','JPG','A wildlife image showing a bear in nature.')">
+<div class="item"
 
-                Image 4
+onclick="changeImage(
 
-            </div>
+'https://picsum.photos/id/1016/450/240',
 
-        </div>
+'Mountain View',
 
-        <div class="image-area">
+'Travel',
 
-            <button onclick="toggleInfo()">Details</button>
+'Fresh mountain scenery and blue sky.')">
 
-            <img id="mainImg" src="https://picsum.photos/id/1015/450/240" alt="Image">
+Image 2
 
-            <div id="info" class="info">
+</div>
 
-                <strong>Image Information</strong><br>
+<div class="item"
 
-                Name: River Landscape<br>
+onclick="changeImage(
 
-                Size: 450 x 240<br>
+'https://picsum.photos/id/1018/450/240',
 
-                Category: Nature<br>
+'Forest Path',
 
-                Format: JPG<br>
+'Outdoor',
 
-                Description: A beautiful river landscape with mountains and clear water.
+'Green trees and peaceful walking road.')">
 
-            </div>
+Image 3
 
-        </div>
+</div>
 
-    </div>
+<div class="item"
+
+onclick="changeImage(
+
+'https://picsum.photos/id/1020/450/240',
+
+'Bear Image',
+
+'Animal',
+
+'Wild bear standing in the forest.')">
+
+Image 4
+
+</div>
+
+</div>
+
+<div class="image-area">
+
+<button onclick="toggleInfo()">Details</button>
+
+<img id="mainImg"
+
+src="https://picsum.photos/id/1015/450/240">
+
+<div id="info" class="info">
+
+<strong>Image Information</strong><br>
+
+Name: River Landscape<br>
+
+Size: 450 x 240<br>
+
+Category: Nature<br>
+
+Format: JPG<br>
+
+Description: Beautiful river and mountain view.<br>
+
+Upload Date: 2026/04/27<br>
+
+Author: User<br>
+
+Status: Active<br>
+
+Location: Unknown<br>
+
+Resolution: HD<br>
+
+Extra Data Line 1<br>
+
+Extra Data Line 2<br>
+
+Extra Data Line 3<br>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -232,39 +294,55 @@ button:hover{
 
 function toggleInfo(){
 
-    var info = document.getElementById("info");
+var box = document.getElementById("info");
 
-    if(info.style.display === "block"){
+if(box.style.display=="block"){
 
-        info.style.display = "none";
+box.style.display="none";
 
-    }else{
+}else{
 
-        info.style.display = "block";
-
-    }
+box.style.display="block";
 
 }
 
-function changeImage(url, name, size, category, format, description){
+}
 
-    document.getElementById("mainImg").src = url;
+function changeImage(url,name,category,desc){
 
-    document.getElementById("info").innerHTML =
+document.getElementById("mainImg").src=url;
 
-        "<strong>Image Information</strong><br>" +
+document.getElementById("info").innerHTML=
 
-        "Name: " + name + "<br>" +
+"<strong>Image Information</strong><br>"+
 
-        "Size: " + size + "<br>" +
+"Name: "+name+"<br>"+
 
-        "Category: " + category + "<br>" +
+"Size: 450 x 240<br>"+
 
-        "Format: " + format + "<br>" +
+"Category: "+category+"<br>"+
 
-        "Description: " + description + "<br><br>" +
+"Format: JPG<br>"+
 
-        "This area can be scrolled when the information is longer.";
+"Description: "+desc+"<br>"+
+
+"Upload Date: 2026/04/27<br>"+
+
+"Author: User<br>"+
+
+"Status: Active<br>"+
+
+"Location: Unknown<br>"+
+
+"Resolution: HD<br>"+
+
+"Extra Data Line 1<br>"+
+
+"Extra Data Line 2<br>"+
+
+"Extra Data Line 3<br>"+
+
+"Extra Data Line 4<br>";
 
 }
 
