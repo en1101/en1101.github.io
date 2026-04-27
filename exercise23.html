@@ -6,9 +6,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Specified Button</title>
+<title>Exercise 23</title>
 
 <style>
 
@@ -38,27 +36,41 @@ body{
 
 }
 
-.title{
-
-    font-size:13px;
-
-    color:#707070;
-
-    margin-bottom:12px;
-
-}
-
-.main{
+.container{
 
     display:flex;
+
+    gap:20px;
 
     align-items:flex-start;
 
 }
 
-.left-box{
+.list{
 
-    width:496px;
+    width:180px;
+
+}
+
+.item{
+
+    background:#90ee90;
+
+    margin-bottom:8px;
+
+    padding:8px;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    border:1px solid #5fa85f;
+
+}
+
+.item:hover{
+
+    background:#7ed97e;
 
 }
 
@@ -68,7 +80,7 @@ body{
 
     background:#fff2df;
 
-    border:1px solid #e0d8c8;
+    border:1px solid #ddd;
 
     padding:20px;
 
@@ -90,7 +102,7 @@ body{
 
 }
 
-.btn{
+button{
 
     position:absolute;
 
@@ -116,7 +128,7 @@ body{
 
 }
 
-.btn:hover{
+button:hover{
 
     background:#eeeeee;
 
@@ -126,46 +138,27 @@ body{
 
     display:none;
 
-    margin-top:12px;
+    width:450px;
 
-    font-size:13px;
-
-    color:#707070;
-
-    line-height:1.8;
-
-    border-top:1px solid #dddddd;
-
-    padding-top:12px;
-
-    height:120px;
+    height:100px;
 
     overflow-y:auto;
 
-}
-.right-box{
+    margin-top:12px;
 
-    margin-left:26px;
+    padding:10px;
 
-    width:180px;
+    box-sizing:border-box;
+
+    border:1px solid #cccccc;
+
+    background:white;
 
     font-size:13px;
 
-}
-
-.right-title{
-
-    color:#f4a3b4;
-
-    margin-bottom:20px;
-
-}
-
-.right-box p{
-
     color:#707070;
 
-    line-height:1.8;
+    line-height:1.7;
 
 }
 
@@ -177,41 +170,57 @@ body{
 
 <div class="wrapper">
 
-    <div class="title">Summary</div>
+    <div class="container">
 
-    <div class="main">
+        <div class="list">
 
-        <div class="left-box">
+            <div class="item" onclick="changeImage('https://picsum.photos/id/1015/450/240','River Landscape','450 x 240','Nature','JPG','A beautiful river landscape with mountains and clear water.')">
 
-            <div class="image-area">
-
-                <button class="btn" onclick="showInfo()">Details</button>
-
-                <img src="https://picsum.photos/450/240" alt="Landscape Image">
+                Image 1
 
             </div>
 
-            <div id="info" class="info">
+            <div class="item" onclick="changeImage('https://picsum.photos/id/1016/450/240','Mountain View','450 x 240','Travel','JPG','A mountain view with natural scenery and bright sky.')">
 
-                <strong>Image Information</strong><br>
+                Image 2
 
-                File Name: 20171012-1.jpg<br>
+            </div>
 
-                Image Size: 450 × 240<br>
+            <div class="item" onclick="changeImage('https://picsum.photos/id/1018/450/240','Forest Path','450 x 240','Outdoor','JPG','A peaceful forest path surrounded by green trees.')">
 
-                Button Size: Height 22px / Radius 8px<br>
+                Image 3
 
-                Font: Roboto Regular 13px<br>
+            </div>
 
-                Color: #212f2f
+            <div class="item" onclick="changeImage('https://picsum.photos/id/1020/450/240','Bear Image','450 x 240','Animal','JPG','A wildlife image showing a bear in nature.')">
+
+                Image 4
 
             </div>
 
         </div>
 
-        <div class="right-box">
+        <div class="image-area">
 
-            <div class="right-title">Detailed Image Information</div>
+            <button onclick="toggleInfo()">Details</button>
+
+            <img id="mainImg" src="https://picsum.photos/id/1015/450/240" alt="Image">
+
+            <div id="info" class="info">
+
+                <strong>Image Information</strong><br>
+
+                Name: River Landscape<br>
+
+                Size: 450 x 240<br>
+
+                Category: Nature<br>
+
+                Format: JPG<br>
+
+                Description: A beautiful river landscape with mountains and clear water.
+
+            </div>
 
         </div>
 
@@ -221,7 +230,7 @@ body{
 
 <script>
 
-function showInfo(){
+function toggleInfo(){
 
     var info = document.getElementById("info");
 
@@ -234,6 +243,28 @@ function showInfo(){
         info.style.display = "block";
 
     }
+
+}
+
+function changeImage(url, name, size, category, format, description){
+
+    document.getElementById("mainImg").src = url;
+
+    document.getElementById("info").innerHTML =
+
+        "<strong>Image Information</strong><br>" +
+
+        "Name: " + name + "<br>" +
+
+        "Size: " + size + "<br>" +
+
+        "Category: " + category + "<br>" +
+
+        "Format: " + format + "<br>" +
+
+        "Description: " + description + "<br><br>" +
+
+        "This area can be scrolled when the information is longer.";
 
 }
 
