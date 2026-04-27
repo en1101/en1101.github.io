@@ -1,247 +1,128 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>Exercise 23</title>
+<title>Image Preview UI</title>
 
 <style>
-
-body{
-
-    margin:0;
-
-    padding:30px;
-
-    background:#f5f5f5;
-
-    font-family:Arial, sans-serif;
-
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f5f5f5;
 }
 
-.wrapper{
-
-    width:900px;
-
-    margin:auto;
-
-    background:white;
-
-    padding:20px;
-
-    box-sizing:border-box;
-
+/* 外框 */
+.container {
+    width: 520px;
+    background: #fff;
+    border: 1px solid #ddd;
 }
 
-.container{
+/* ⭐ 上方 header（重點） */
+.header {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display:flex;
-
-    gap:20px;
-
-    align-items:flex-start;
-
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-.left-panel{
-
-    width:180px;
-
+/* 左側文字 */
+.title {
+    font-size: 13px;
+    color: #2f2f2f;
 }
 
-.title{
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    color:#555;
-
-    margin-bottom:15px;
-
+/* 按鈕 */
+.btn {
+    height: 22px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid #2f2f2f;
+    background-color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.item{
-
-    background:#8be28b;
-
-    padding:12px;
-
-    margin-bottom:10px;
-
-    border:1px solid #5ea95e;
-
-    font-size:13px;
-
+.btn:hover {
+    background-color: #f0f0f0;
 }
 
-.image-area{
-
-    width:620px;
-
-    background:#fff2df;
-
-    border:1px solid #ddd;
-
-    padding:20px;
-
-    box-sizing:border-box;
-
-    position:relative;
-
+/* 圖片 */
+.image-box img {
+    width: 100%;
+    display: block;
 }
 
-.image-area img{
+/* 詳細資訊 */
+.details {
+    display: none;
+    font-size: 13px;
+    color: #707070;
+    border-top: 1px solid #ccc;
+    padding: 10px;
 
-    width:560px;
-
-    height:280px;
-
-    display:block;
-
-    object-fit:cover;
-
+    max-height: 120px;
+    overflow-y: scroll; /* 強制 scrollbar */
 }
 
-button{
-
-    position:absolute;
-
-    top:15px;
-
-    right:20px;
-
-    width:90px;
-
-    height:30px;
-
-    border-radius:10px;
-
-    border:1px solid #222;
-
-    background:white;
-
-    font-size:14px;
-
-    cursor:pointer;
-
+/* scrollbar（確保看得到） */
+.details::-webkit-scrollbar {
+    width: 8px;
 }
 
-.info{
-
-    display:none;
-
-    width:560px;
-
-    height:130px;
-
-    margin-top:15px;
-
-    padding:10px;
-
-    box-sizing:border-box;
-
-    border:1px solid #bbb;
-
-    background:#f8f8f8;
-
-    font-size:13px;
-
-    color:#666;
-
-    line-height:1.7;
-
-    overflow-y:scroll;
-
+.details::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 4px;
 }
-
 </style>
-
 </head>
 
 <body>
 
-<div class="wrapper">
-
 <div class="container">
 
-<div class="left-panel">
+    <!-- ⭐ 上方長框 -->
+    <div class="header">
+        <div class="title">預覽</div>
 
-<div class="title">Preview</div>
+        <button class="btn" onclick="toggleDetails()">
+            查看資訊
+        </button>
+    </div>
 
-<div class="item">Image 1</div>
+    <!-- 圖片 -->
+    <div class="image-box">
+        <img src="https://picsum.photos/500/300">
+    </div>
 
-<div class="item">Image 2</div>
-
-<div class="item">Image 3</div>
-
-</div>
-
-<div class="image-area">
-
-<button onclick="toggleInfo()">Details</button>
-
-<img src="https://picsum.photos/id/1015/560/280" alt="Image">
-
-<div id="info" class="info">
-
-<strong>Image Information</strong><br>
-
-Name: River Landscape<br>
-
-Size: 560 x 280<br>
-
-Category: Nature<br>
-
-Format: JPG<br>
-
-Description: Beautiful river and mountain view.<br>
-
-Upload Date: 2026/04/27<br>
-
-Author: User<br>
-
-Status: Active<br>
-
-Resolution: HD<br>
-
-Extra Data Line 1<br>
-
-Extra Data Line 2<br>
-
-Extra Data Line 3<br>
-
-</div>
-
-</div>
-
-</div>
+    <!-- 詳細資訊 -->
+    <div id="details" class="details">
+        <p>日期：2017/10/12</p>
+        <p>檔名：20171012_1.jpg</p>
+        <p>大小：400.57KB</p>
+        <p>路徑：/user/project/images/sample.jpg</p>
+        <p>作者：admin</p>
+        <p>描述：這是一張測試圖片</p>
+        <p>更多資訊1</p>
+        <p>更多資訊2</p>
+        <p>更多資訊3</p>
+        <p>更多資訊4</p>
+        <p>更多資訊5</p>
+    </div>
 
 </div>
 
 <script>
-
-function toggleInfo(){
-
-var box=document.getElementById("info");
-
-if(box.style.display=="block"){
-
-box.style.display="none";
-
-}else{
-
-box.style.display="block";
-
+function toggleDetails() {
+    const d = document.getElementById("details");
+    d.style.display = (d.style.display === "block") ? "none" : "block";
 }
-
-}
-
 </script>
 
 </body>
-
 </html>
