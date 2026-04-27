@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exercise 5</title>
+
+<style>
+
+body{
+
+    margin:0;
+
+    padding:30px;
+
+    background:#f5f5f5;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.wrapper{
+
+    width:360px;
+
+    background:#4da6e8;
+
+    padding:20px;
+
+    border-radius:8px;
+
+}
+
+.phone{
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:12px;
+
+}
+
+/* 綠色區塊 */
+
+.top{
+
+    height:80px;
+
+    background:#a8cf3d;
+
+    margin-bottom:8px;
+
+}
+
+/* 藍色區塊 */
+
+.middle{
+
+    display:grid;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+}
+
+/* 灰色區塊 */
+
+.bottom{
+
+    display:grid;
+
+    gap:8px;
+
+}
+
+/* 手機版 <480 */
+
+.middle{
+
+    grid-template-columns:1fr;
+
+}
+
+.bottom{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.middle div{
+
+    height:55px;
+
+    background:#11bfd0;
+
+}
+
+.bottom div{
+
+    height:45px;
+
+    background:#d9e1e5;
+
+}
+
+/* 寬版 >=480 */
+
+@media screen and (min-width:480px){
+
+.wrapper{
+
+    width:600px;
+
+}
+
+.middle{
+
+    grid-template-columns:1fr 1fr 1fr;
+
+}
+
+.bottom{
+
+    grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="phone">
+
+<div class="top"></div>
+
+<div class="middle">
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</div>
+
+<div class="bottom">
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+<div></div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
