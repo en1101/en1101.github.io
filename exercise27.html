@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Exercise 27</title>
+<title>Responsive Layout</title>
 
 <style>
 
@@ -20,119 +20,103 @@ body{
 
     background:#f5f5f5;
 
-    display:flex;
-
-    justify-content:center;
-
 }
 
-.wrapper{
+.container{
 
-    width:360px;
-
-    background:#4da6e8;
+    background:#4db3f2;
 
     padding:20px;
 
-    border-radius:8px;
+    box-sizing:border-box;
+
+    width:100%;
+
+    max-width:760px;
+
+    margin:auto;
 
 }
 
-.phone{
+.card{
 
     background:white;
 
     border-radius:8px;
 
-    padding:12px;
+    padding:10px;
+
+    box-sizing:border-box;
 
 }
 
-/* 綠色區塊 */
-
-.top{
+.header{
 
     height:80px;
 
-    background:#a8cf3d;
+    background:#a8d83f;
 
     margin-bottom:8px;
 
 }
 
-/* 藍色區塊 */
-
-.middle{
+.content{
 
     display:grid;
-
-    gap:8px;
-
-    margin-bottom:8px;
-
-}
-
-/* 灰色區塊 */
-
-.bottom{
-
-    display:grid;
-
-    gap:8px;
-
-}
-
-/* 手機版 <480 */
-
-.middle{
 
     grid-template-columns:1fr;
 
-}
+    gap:8px;
 
-.bottom{
-
-    grid-template-columns:1fr 1fr;
+    margin-bottom:8px;
 
 }
 
-.middle div{
-
-    height:55px;
-
-    background:#11bfd0;
-
-}
-
-.bottom div{
+.content div{
 
     height:45px;
 
-    background:#d9e1e5;
+    background:#10bcc7;
 
 }
 
-/* 寬版 >=480 */
+.footer{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+}
+
+.footer div{
+
+    height:35px;
+
+    background:#dfe8eb;
+
+}
 
 @media screen and (min-width:480px){
 
-.wrapper{
+    .content{
 
-    width:600px;
+        grid-template-columns:1fr 1fr 1fr;
 
-}
+    }
 
-.middle{
+    .content div{
 
-    grid-template-columns:1fr 1fr 1fr;
+        height:95px;
 
-}
+    }
 
-.bottom{
+    .footer{
 
-    grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr 1fr;
 
-}
+    }
 
 }
 
@@ -142,35 +126,35 @@ body{
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-<div class="phone">
+    <div class="card">
 
-<div class="top"></div>
+        <div class="header"></div>
 
-<div class="middle">
+        <div class="content">
 
-<div></div>
+            <div></div>
 
-<div></div>
+            <div></div>
 
-<div></div>
+            <div></div>
 
-</div>
+        </div>
 
-<div class="bottom">
+        <div class="footer">
 
-<div></div>
+            <div></div>
 
-<div></div>
+            <div></div>
 
-<div></div>
+            <div></div>
 
-<div></div>
+            <div></div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </div>
 
