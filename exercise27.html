@@ -22,101 +22,117 @@ body{
 
 }
 
-.container{
+.wrapper{
 
-    background:#4db3f2;
+    width:90%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:#4da6e8;
 
     padding:20px;
 
     box-sizing:border-box;
 
-    width:100%;
-
-    max-width:760px;
-
-    margin:auto;
-
 }
 
-.card{
+.phone{
 
     background:white;
 
-    border-radius:8px;
+    border-radius:10px;
 
     padding:10px;
 
-    box-sizing:border-box;
-
 }
 
-.header{
+/* 綠色區 */
 
-    height:80px;
+.top{
 
-    background:#a8d83f;
+    height:90px;
+
+    background:#a9cf3c;
 
     margin-bottom:8px;
 
 }
 
-.content{
+/* 藍色區 */
+
+.middle{
 
     display:grid;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+}
+
+/* 灰色區 */
+
+.bottom{
+
+    display:grid;
+
+    gap:8px;
+
+}
+
+/* 小於480px：左圖 */
+
+.middle{
 
     grid-template-columns:1fr;
 
-    gap:8px;
+}
 
-    margin-bottom:8px;
+.middle div{
+
+    height:55px;
+
+    background:#16bccb;
 
 }
 
-.content div{
-
-    height:45px;
-
-    background:#10bcc7;
-
-}
-
-.footer{
-
-    display:grid;
+.bottom{
 
     grid-template-columns:1fr 1fr;
 
-    gap:8px;
+}
+
+.bottom div{
+
+    height:45px;
+
+    background:#dce4e8;
 
 }
 
-.footer div{
-
-    height:35px;
-
-    background:#dfe8eb;
-
-}
+/* 大於等於480px：右圖 */
 
 @media screen and (min-width:480px){
 
-    .content{
+.middle{
 
-        grid-template-columns:1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
 
-    }
+}
 
-    .content div{
+.middle div{
 
-        height:95px;
+    height:120px;
 
-    }
+}
 
-    .footer{
+.bottom{
 
-        grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
 
-    }
+}
 
 }
 
@@ -126,35 +142,35 @@ body{
 
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-    <div class="card">
+<div class="phone">
 
-        <div class="header"></div>
+<div class="top"></div>
 
-        <div class="content">
+<div class="middle">
 
-            <div></div>
+<div></div>
 
-            <div></div>
+<div></div>
 
-            <div></div>
+<div></div>
 
-        </div>
+</div>
 
-        <div class="footer">
+<div class="bottom">
 
-            <div></div>
+<div></div>
 
-            <div></div>
+<div></div>
 
-            <div></div>
+<div></div>
 
-            <div></div>
+<div></div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </div>
 
