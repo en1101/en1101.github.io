@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Specified Button</title>
+
+<style>
+
+body{
+
+    margin:0;
+
+    padding:30px;
+
+    background:#f5f5f5;
+
+    font-family:Roboto, Arial, sans-serif;
+
+}
+
+.wrapper{
+
+    width:760px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
+}
+
+.title{
+
+    font-size:13px;
+
+    color:#707070;
+
+    margin-bottom:12px;
+
+}
+
+.main{
+
+    display:flex;
+
+    align-items:flex-start;
+
+}
+
+.left-box{
+
+    width:496px;
+
+}
+
+.image-area{
+
+    width:496px;
+
+    background:#fff2df;
+
+    border:1px solid #e0d8c8;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
+    position:relative;
+
+}
+
+.image-area img{
+
+    width:450px;
+
+    height:240px;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+.btn{
+
+    position:absolute;
+
+    top:8px;
+
+    right:12px;
+
+    width:82px;
+
+    height:22px;
+
+    border-radius:8px;
+
+    border:1px solid #212f2f;
+
+    background:white;
+
+    color:#212f2f;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+}
+
+.btn:hover{
+
+    background:#eeeeee;
+
+}
+
+.info{
+
+    display:none;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    color:#707070;
+
+    line-height:1.8;
+
+    border-top:1px solid #dddddd;
+
+    padding-top:12px;
+
+}
+
+.right-box{
+
+    margin-left:26px;
+
+    width:180px;
+
+    font-size:13px;
+
+}
+
+.right-title{
+
+    color:#f4a3b4;
+
+    margin-bottom:20px;
+
+}
+
+.right-box p{
+
+    color:#707070;
+
+    line-height:1.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="title">Summary</div>
+
+    <div class="main">
+
+        <div class="left-box">
+
+            <div class="image-area">
+
+                <button class="btn" onclick="showInfo()">Details</button>
+
+                <img src="20171012-1.jpg" alt="Landscape Image">
+
+            </div>
+
+            <div id="info" class="info">
+
+                <strong>Image Information</strong><br>
+
+                File Name: 20171012-1.jpg<br>
+
+                Image Size: 450 × 240<br>
+
+                Button Size: Height 22px / Radius 8px<br>
+
+                Font: Roboto Regular 13px<br>
+
+                Color: #212f2f
+
+            </div>
+
+        </div>
+
+        <div class="right-box">
+
+            <div class="right-title">Detailed Image Information</div>
+
+            <p>Please click the button on the upper-right side of the image.</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function showInfo(){
+
+    var info = document.getElementById("info");
+
+    if(info.style.display === "block"){
+
+        info.style.display = "none";
+
+    }else{
+
+        info.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
