@@ -24,7 +24,7 @@ body{
 
 .wrapper{
 
-    width:760px;
+    width:900px;
 
     margin:auto;
 
@@ -36,57 +36,51 @@ body{
 
 }
 
-.title{
-
-    font-size:14px;
-
-    color:#666666;
-
-    margin-bottom:15px;
-
-    font-weight:bold;
-
-}
-
 .container{
 
     display:flex;
 
     gap:20px;
 
+    align-items:flex-start;
+
 }
 
-.list{
+.left-panel{
 
     width:180px;
 
 }
 
-.item{
+.title{
 
-    background:#90ee90;
+    font-size:16px;
 
-    padding:8px;
+    font-weight:bold;
 
-    margin-bottom:8px;
+    color:#555;
 
-    border:1px solid #5fa85f;
-
-    font-size:13px;
-
-    cursor:pointer;
+    margin-bottom:15px;
 
 }
 
-.item:hover{
+.item{
 
-    background:#7ed97e;
+    background:#8be28b;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border:1px solid #5ea95e;
+
+    font-size:13px;
 
 }
 
 .image-area{
 
-    width:496px;
+    width:620px;
 
     background:#fff2df;
 
@@ -102,9 +96,9 @@ body{
 
 .image-area img{
 
-    width:450px;
+    width:560px;
 
-    height:240px;
+    height:280px;
 
     display:block;
 
@@ -116,21 +110,21 @@ button{
 
     position:absolute;
 
-    top:8px;
+    top:15px;
 
-    right:12px;
+    right:20px;
 
-    width:82px;
+    width:90px;
 
-    height:22px;
+    height:30px;
 
-    border-radius:8px;
+    border-radius:10px;
 
-    border:1px solid #212f2f;
+    border:1px solid #222;
 
     background:white;
 
-    font-size:13px;
+    font-size:14px;
 
     cursor:pointer;
 
@@ -140,23 +134,23 @@ button{
 
     display:none;
 
-    width:450px;
+    width:560px;
 
-    height:120px;
+    height:130px;
 
-    margin-top:12px;
+    margin-top:15px;
 
     padding:10px;
 
     box-sizing:border-box;
 
-    border:1px solid #cccccc;
+    border:1px solid #bbb;
 
-    background:white;
+    background:#f8f8f8;
 
     font-size:13px;
 
-    color:#707070;
+    color:#666;
 
     line-height:1.7;
 
@@ -172,75 +166,17 @@ button{
 
 <div class="wrapper">
 
-<div class="title">Preview</div>
-
 <div class="container">
 
-<div class="list">
+<div class="left-panel">
 
-<div class="item"
+<div class="title">Preview</div>
 
-onclick="changeImage(
+<div class="item">Image 1</div>
 
-'https://picsum.photos/id/1015/450/240',
+<div class="item">Image 2</div>
 
-'River Landscape',
-
-'Nature',
-
-'Beautiful river and mountain view.')">
-
-Image 1
-
-</div>
-
-<div class="item"
-
-onclick="changeImage(
-
-'https://picsum.photos/id/1016/450/240',
-
-'Mountain View',
-
-'Travel',
-
-'Fresh mountain scenery and blue sky.')">
-
-Image 2
-
-</div>
-
-<div class="item"
-
-onclick="changeImage(
-
-'https://picsum.photos/id/1018/450/240',
-
-'Forest Path',
-
-'Outdoor',
-
-'Green trees and peaceful walking road.')">
-
-Image 3
-
-</div>
-
-<div class="item"
-
-onclick="changeImage(
-
-'https://picsum.photos/id/1020/450/240',
-
-'Bear Image',
-
-'Animal',
-
-'Wild bear standing in the forest.')">
-
-Image 4
-
-</div>
+<div class="item">Image 3</div>
 
 </div>
 
@@ -248,9 +184,7 @@ Image 4
 
 <button onclick="toggleInfo()">Details</button>
 
-<img id="mainImg"
-
-src="https://picsum.photos/id/1015/450/240">
+<img src="https://picsum.photos/id/1015/560/280" alt="Image">
 
 <div id="info" class="info">
 
@@ -258,7 +192,7 @@ src="https://picsum.photos/id/1015/450/240">
 
 Name: River Landscape<br>
 
-Size: 450 x 240<br>
+Size: 560 x 280<br>
 
 Category: Nature<br>
 
@@ -271,8 +205,6 @@ Upload Date: 2026/04/27<br>
 Author: User<br>
 
 Status: Active<br>
-
-Location: Unknown<br>
 
 Resolution: HD<br>
 
@@ -294,7 +226,7 @@ Extra Data Line 3<br>
 
 function toggleInfo(){
 
-var box = document.getElementById("info");
+var box=document.getElementById("info");
 
 if(box.style.display=="block"){
 
@@ -305,44 +237,6 @@ box.style.display="none";
 box.style.display="block";
 
 }
-
-}
-
-function changeImage(url,name,category,desc){
-
-document.getElementById("mainImg").src=url;
-
-document.getElementById("info").innerHTML=
-
-"<strong>Image Information</strong><br>"+
-
-"Name: "+name+"<br>"+
-
-"Size: 450 x 240<br>"+
-
-"Category: "+category+"<br>"+
-
-"Format: JPG<br>"+
-
-"Description: "+desc+"<br>"+
-
-"Upload Date: 2026/04/27<br>"+
-
-"Author: User<br>"+
-
-"Status: Active<br>"+
-
-"Location: Unknown<br>"+
-
-"Resolution: HD<br>"+
-
-"Extra Data Line 1<br>"+
-
-"Extra Data Line 2<br>"+
-
-"Extra Data Line 3<br>"+
-
-"Extra Data Line 4<br>";
 
 }
 
